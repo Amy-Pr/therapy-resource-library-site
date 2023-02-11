@@ -14,7 +14,7 @@
             crossorigin="anonymous" />
         <link rel="stylesheet" href="css/normalize.css" />
         <link rel="stylesheet" href="css/styles.css" />
-        <!--<script src="js/script.js" defer></script>-->
+        <script src="js/data.js" defer></script>
     </head>
 
     <body>
@@ -50,50 +50,24 @@
                             <button id="expository text" class="btnFilter">expository text</button>
                             <button id="language" class="btnFilter">language</button>
                             <button id="articulation" class="btnFilter">articulation</button>
-                            <button id="all" class="btnFilter">science</button>
+                            <button id="science" class="btnFilter">science</button>
                             <button id="videos" class="btnFilter">videos</button>
                             <button id="voice" class="btnFilter">voice</button>
                             <button id="aphasia" class="btnFilter">aphasia</button>
-                        
-
-                    <!---<ul>
-                            <li id="all" class="btnFilter">all</li>
-                            <li id="games" class="btnFilter">games</li>
-                            <li id="fluency" class="btnFilter">fluency</li>
-                            <li id="pragmatics" class="btnFilter">pragmatics</li>
-                            <li id="stories" class="btnFilter">stories</li>
-                            <li id="expository text" class="btnFilter">expository text</li>
-                            <li id="language" class="btnFilter">language</li>
-                            <li id="articulation" class="btnFilter">articulation</li>
-                            <li id="all" class="btnFilter">science</li>
-                            <li id="videos" class="btnFilter">videos</li>
-                            <li id="voice" class="btnFilter">voice</li>
-                            <li id="aphasia" class="btnFilter">aphasia</li>
-                        </ul> -->
                     </div>
                 </div>
 
 
                 
-                    <div class="repo-list"> <!--consider changing to "resource-list" in all of CSS file-->
-                       <!--- <template> -->
+                    <div id="resourcesContainer"> <!--class previously "repo-list"-->
+                       <template>
                             <article class="repo card-1" id="resource">
-                                <h3 id="title"></h3>
+                                <h3><a id="title" href="" target="_blank"></a></h3>
                                 <p id="description"></p>
     
-                                <div class="tagsContainer">
-                                    <span class="tag">tag</span>
-                                    <span class="tag">tag</span>
-                                    <span class="tag">tag</span>
-                                    <span class="tag">tag</span>
-                                </div>
-    
+                                <div id="tagsContainer"></div>
                             </article>
-                        <!-- </template> -->
-
-
-
-
+                        </template>
 
 
                     <!---<article class="repo card-1">
