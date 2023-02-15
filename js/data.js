@@ -1,6 +1,10 @@
 const template = document.querySelector("template");
 const resources = document.querySelector("#resourcesContainer");
-const btnFilter = document.querySelectorAll(".btnFilter");
+const btnFilter = document.querySelectorAll(".btnFilter"); // I can probably get rid of this and on the HTML
+const btnList = document.querySelector("div.tags");
+
+
+
 let category="all"; //loads with all shown, can change later
 let filteredDataResources = [];
 
@@ -32,18 +36,7 @@ const dataResources = [
   ]
 
 
-// CLEARING AND FILLING CONTAINER WITH CARDS ON CLICK
-function fillResourcesContainer(e) {
-  resources.innerHTML = "";
-  category = this.id;
-  resources;
-  filterResources(category)
-}
-
-
 //FILTER FUNCTION
-
-
 function filterResources(category) {
   filteredDataResources = dataResources.filter( resourceData => { // resourceData is the object, we are filtering through each one
     if (resourceData.tags.includes(category)) {
@@ -100,12 +93,38 @@ function copyTemplateCard(resourceData) {
 } 
 
 
-//EVENT LISTENER 
-btnFilter.forEach(function(btn) {
-  btn.addEventListener("click", fillResourcesContainer);
+
+// CLEARING AND FILLING CONTAINER WITH CARDS ON CLICK
+function fillResourcesContainer(e) {
+  resources.innerHTML = "";
+  category = e.target.id;
+  filterResources(category)
+}
+
+
+//ADD ONE EVENT LISTENER TO THE CONTAINER AND APPLY TO BUTTON TAGS ONLY
+
+btnList.addEventListener("click", (e)=>{
+  if (e.target.tagName === "BUTTON") {
+    fillResourcesContainer(e);
+    //console.log(e.target.id);
+  }
 });
 
 
+
+//ALTERNATIVE - LOOPING THROUGH THE BUTTONS AND ADDING EVENT LISTENER TO EACH
+
+// function fillResourcesContainer() {
+//   resources.innerHTML = "";
+//   category = this.id;
+//   filterResources(category)
+// }
+
+
+// btnFilter.forEach(function(btn) {
+//   btn.addEventListener("click", fillResourcesContainer);
+// });
 
 
 
